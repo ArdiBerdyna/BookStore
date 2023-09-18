@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = Acme.BookStore
+build_property.ProjectDir = C:\Users\Berdyna Tech\Downloads\Bookstore\Bookstore\aspnet-core\src\Acme.BookStore.Domain.Shared\
