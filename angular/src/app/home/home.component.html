@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="book-cover p-5 text-center">
+ 
+      <a *ngIf="!hasLoggedIn" (click)="login()" class="px-4 btn btn-primary ms-1" role="button"
+      ><i class="fa fa-sign-in"></i> {{ 'AbpAccount::Login' | abpLocalization }}</a
+      >
+    </div>
+   
+    <div *ngIf="hasLoggedIn" >
+      <h2 class="text-center py-3"> List of Books</h2>
+      <div id="bookContainer p-5">
+        <div  *ngFor="let item of book?.items" class="book p-3">
+          <img src="assets/images/book.jpeg" alt="Book 1" height="110px">
+          <p>{{item?.name}}</p>
+          <p>{{item?.authorName}}</p>
+          <p>{{item?.price}}</p>
+        </div>
+       
+      </div>
+      
+    </div>
+
+  
+  <style scoped>
+
+.book {
+    display: inline-block;
+    width: 226px; /* Adjust as needed */
+    height: 250px;
+    margin: 10px; /* Adjust as needed */
+    text-align: center;
+    background: white;
+    border: 1px solid burlywood;
+    /* background-image: url('assets/images/book.jpeg'); */
+  }
+
+  .book-cover{
+      min-height: 600px;
+      width: 100%;
+      background-image: url('assets/images/vesa.png');
+      background-repeat: no-repeat;
+      position: relative;
+  }
+
+  a{
+    position: absolute;
+    bottom: 75px;
+    left: 140px;
+  }
+    .col-lg-2.border-start:nth-of-type(6n + 1) {
+      border-left: 0 !important;
+    }
+  
+    .col-lg-4.border-start:nth-of-type(3n + 1) {
+      border-left: 0 !important;
+    }
+  
+    @media (max-width: 991px) {
+      .border-start {
+        border-left: 0 !important;
+      }
+    }
+  </style>
+  
